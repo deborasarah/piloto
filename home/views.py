@@ -1,8 +1,8 @@
-from django.http import HttpResponse 
+from django.shortcuts import render, HttpResponse
 
 
 def index(request):
-    return HttpResponse("A view index funcionou , Wow!")
+    return render (request,'index.html')
 
-def sobre (request):
-    return HttpResponse("<h1>Sistema 1.0 desenvolvido por mim<h1>")
+def sobre(request):
+    return render(request, 'sobre.html')
