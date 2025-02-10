@@ -15,16 +15,16 @@
     </tr>
   </thead>
   <tbody>
-    {% for item in lista %}
+    {% for indice, item in lista %}
     <tr>
-      <td>{{ forloop.counter0 }}</td>
-      <td>{{item.nome}}</td>
-      <td>{{item.curso}}</td>
-      <td>{{item.turma}}</td>
-      <td>{{item.data_de_nascimento}}</td>
+      <td>{{ indice }}</td>
+      <td>{{ item.nome }}</td>
+      <td>{{ item.curso }}</td>
+      <td>{{ item.turma }}</td>
+      <td>{{ item.data_de_nascimento }}</td>
       <td>
-        <a href="{% url 'editar_aluno' item.id %}" class="btn btn-warning">Alterar</a>
-        <a href="{% url 'excluir_aluno' item.id %}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja remover este registro?');">Excluir</a>
+        <a href="{% url 'editar_aluno' indice %}" class="btn btn-warning">Alterar</a>
+        <a href="{% url 'excluir_aluno' indice %}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja remover este registro?');">Excluir</a>
       </td>
     </tr>
     {% endfor %}

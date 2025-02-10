@@ -72,8 +72,8 @@ LISTA_ALUNOS = [
 ]
 
 def listar_alunos(request):
-    context = { 
-        'lista': LISTA_ALUNOS,
+    context = {
+        'lista': [(indice, aluno) for indice, aluno in enumerate(LISTA_ALUNOS)],
     }
     return render(request, 'listar_alunos.html', context)
 
