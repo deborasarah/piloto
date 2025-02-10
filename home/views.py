@@ -109,6 +109,8 @@ def cadastrar_aluno(request):
         }
         LISTA_ALUNOS.append(novo_aluno)
         return redirect('listar_alunos')
+    
+    return render(request, 'form_aluno.html', {}) 
 
 def excluir_aluno(request, indice):
     del LISTA_ALUNOS[indice]
